@@ -4,7 +4,9 @@ const search = document.getElementById("search"),
   random = document.getElementById("random"),
   mealsEl = document.getElementById("meals"),
   resultHeading = document.getElementById("result-heading"),
-  single_mealEl = document.getElementById("single-meal");
+  single_mealEl = document.getElementById("single-meal"),
+  header = document.getElementById("main-header"),
+  flexContainer = document.getElementById("flex-container");
 
 // Functions ====================================================================
 
@@ -100,6 +102,15 @@ function addMealToDOM(meal) {
         </ul>
     </div>
   </div>`;
+  let totalHeight =
+    header.clientHeight +
+    flexContainer.clientHeight +
+    resultHeading.clientHeight +
+    mealsEl.clientHeight;
+  window.scrollTo({
+    top: totalHeight,
+    behavior: "smooth",
+  });
 }
 
 // Event listeners ===============================================================
